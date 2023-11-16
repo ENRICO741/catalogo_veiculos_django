@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cadastro.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="cabecalho_cadastro">
+            <span>
+                Edição de Carros
+            </span>
+        </div>
+    </nav>
+    <div class="blocosCarros">
+        {% for carro in carros %}
+        <div class="carro">
+            <img src="../../../media/{{carro.image}}" alt="">
+            <p>Preço: R${{carro.preco}}</p>
+            <p>Nome: {{carro.nome}}</p>
+            <p>Marca: {{carro.marca}}</p>
+            <p>Ano: {{carro.ano}}</p>
+            <div class="links">
+                <a href="{% url 'editar' carro.id_carro %}">Editar</a>
+                <a href="{% url 'delete' carro.id_carro %}">Deletar</a>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+    <form action="{% url 'salvar' %}" method="post">
+        {% csrf_token %}
+        <div class="form_cadastro_usuario">
+            <p>Bem vindo ao Cadastro</p>
+            Nome: <input class="input_text" name="nome" type="text">
+            Marca: <input class="input_text" name="marca" type="text">
+            Ano: <input class="input_text" name="ano" type="number">
+            Imagem: <input class="input_file" name="image" type="file">
+            Preço: <input class="input_text" name="preco">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>

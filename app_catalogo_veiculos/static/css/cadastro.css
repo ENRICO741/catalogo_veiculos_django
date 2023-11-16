@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: fit-content;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+    height: 15vh;
+    width: 100%;
+    background-color: #dedede;
+    margin-bottom: 10vh;
+    padding-inline-start: 8%;
+    padding-inline-end: 8%;
+    font-size: 2.5rem;
+}
+
+.cabecalho_cadastro{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.75rem;
+}
+
+
+
+.links a{
+    font-size: 1.25rem;
+    color: black;
+    padding: 7px;
+}
+
+.form_cadastro_usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    height: fit-content;
+    width: 40vw;
+    margin-bottom: 100px;
+}
+
+.form_cadastro_usuario .input_text{
+    margin-bottom: 25px;
+    margin-top: 10px;
+    height: 2rem;
+    width: 70%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #c7c7c7;
+}
+
+
+
+.form_cadastro_usuario .input_file{
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #c7c7c7;
+}
+
+.form_cadastro_usuario button{
+    height: fit-content;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: gray;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+
+}
+
+.form_cadastro_usuario p{
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.blocosCarros{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.carro{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-bottom: 75px;
+    padding: 15px;
+    min-height: 50vh;
+    height: fit-content;
+    width: 20vw;
+    background-color: #c7c7c7;
+    border-radius: 5px;
+}
+
+.carro p{
+    padding: 10px;
+}

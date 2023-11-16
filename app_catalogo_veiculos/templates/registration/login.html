@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cadastro.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="cabecalho_cadastro">
+            <span>
+                Listagem de Carros
+            </span>
+        </div>
+    </nav>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form_cadastro_usuario">
+            <p>Username:</p>
+            <input class="input_text" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+            <p>Password:</p>
+            <input class="input_text"  type="password" name="password" autocomplete="current-password" required="" id="id_password">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>

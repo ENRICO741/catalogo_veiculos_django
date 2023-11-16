@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cadastro.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="cabecalho_cadastro">
+            <span>
+                Edição de Carros
+            </span>
+        </div>
+    </nav>
+    <form action="{% url 'update' carro.id_carro %}" method="post">
+        {% csrf_token %}
+        <div class="form_cadastro_usuario">
+            <p>Bem vindo ao Cadastro</p>
+            Nome: <input class="input_text" name="nome" type="text" value="{{carro.nome}}">
+            Marca: <input class="input_text" name="marca" type="text" value="{{carro.marca}}">
+            Ano: <input class="input_text" name="ano" type="number" value="{{carro.ano}}">
+            Imagem: <input class="input_file" name="image" type="file" value="{{carro.image}}">
+            Preço: <input class="input_text" name="preco" value="{{carro.preco}}">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
